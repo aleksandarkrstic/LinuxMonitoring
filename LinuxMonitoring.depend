@@ -1,0 +1,32 @@
+# depslib dependency file v1.0
+1583877351 source:/home/aleksandar/Desktop/PROJEKTI/LinuxMonitoring/main.cpp
+	"util.h"
+	<iostream>
+
+1583877083 /home/aleksandar/Desktop/PROJEKTI/LinuxMonitoring/util.h
+	<iostream>
+	<string>
+	<fstream>
+	<inttypes.h>
+	<termios.h>
+	<unistd.h>
+	<sys/types.h>
+	<sys/time.h>
+	<sys/ioctl.h>
+	<sstream>
+	<vector>
+	<stdlib.h>
+	<cstdlib>
+	<cmath>
+	<string.h>
+	"memory.h"
+
+1583877519 source:/home/aleksandar/Desktop/PROJEKTI/LinuxMonitoring/util.cpp
+	"util.h"
+
+1583878084 source:/home/aleksandar/Desktop/PROJEKTI/LinuxMonitoring/memory.cpp
+	"memory.h"
+
+1583874806 /home/aleksandar/Desktop/PROJEKTI/LinuxMonitoring/memory.h
+	"util.h"
+
