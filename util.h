@@ -18,13 +18,16 @@
 #include <string.h>
 
 #include "memory.h"
+#include "cpu.h"
 
 extern std::string sudo_password;
 
 //------------------------------------------------------------------------------------
+std::string get_numbers_from_str(std::string str);
+//------------------------------------------------------------------------------------
 bool starts_with(std::string src, std::string pattern);
 //------------------------------------------------------------------------------------
-uint32_t contains(std::string src, std::string pattern);
+bool contains(std::string src, std::string pattern, uint32_t *pos);
 //------------------------------------------------------------------------------------
 std::vector<std::string> split(const std::string &s, char delimiter);
 //------------------------------------------------------------------------------------
@@ -34,11 +37,11 @@ void sudo_login(); //TODO: Not implemented yet
 //------------------------------------------------------------------------------------
 std::string send_command(std::string command);
 //------------------------------------------------------------------------------------
-void do_command(uint32_t cmd);
+void do_command(char cmd);
 //------------------------------------------------------------------------------------
 void print_menu(void);
 //------------------------------------------------------------------------------------
-void sendit();
+void send_terminal_command();
 //------------------------------------------------------------------------------------
 
 #endif // UTIL_H_INCLUDED

@@ -3,6 +3,7 @@
 
 #include "util.h"
 
-void print_memory_stats();
+void print_ram_memory_stats(void);
+void print_hard_disk_memory_stats(void);
 
 #endif // MEMORY_H_INCLUDED

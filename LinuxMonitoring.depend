@@ -30,3 +30,41 @@
 1583874806 /home/aleksandar/Desktop/PROJEKTI/LinuxMonitoring/memory.h
 	"util.h"
 
+1584193804 source:/home/aleksandar/Desktop/git/LinuxMonitoring/main.cpp
+	"util.h"
+	<iostream>
+
+1584192546 /home/aleksandar/Desktop/git/LinuxMonitoring/util.h
+	<iostream>
+	<string>
+	<fstream>
+	<inttypes.h>
+	<termios.h>
+	<unistd.h>
+	<sys/types.h>
+	<sys/time.h>
+	<sys/ioctl.h>
+	<sstream>
+	<vector>
+	<stdlib.h>
+	<cstdlib>
+	<cmath>
+	<string.h>
+	"memory.h"
+	"cpu.h"
+
+1584184207 /home/aleksandar/Desktop/git/LinuxMonitoring/memory.h
+	"util.h"
+
+1584193804 source:/home/aleksandar/Desktop/git/LinuxMonitoring/util.cpp
+	"util.h"
+
+1584192700 source:/home/aleksandar/Desktop/git/LinuxMonitoring/memory.cpp
+	"memory.h"
+
+1584187458 /home/aleksandar/Desktop/git/LinuxMonitoring/cpu.h
+	"util.h"
+
+1584193975 source:/home/aleksandar/Desktop/git/LinuxMonitoring/cpu.cpp
+	"cpu.h"
+

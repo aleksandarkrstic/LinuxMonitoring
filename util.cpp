@@ -2,27 +2,59 @@
 
 std::string sudo_password;
 
+std::string get_numbers_from_str(std::string str)
+{
+    std::string temp = "";
+
+    for(uint32_t i = 0; i < str.length(); i++)
+    {
+        if(isdigit(str[i]))
+        {
+            temp += str[i];
+        }
+    }
+
+    return temp;
+}
+
+
 bool starts_with(std::string src, std::string pattern)
 {
+    if(src.empty() || pattern.empty())
+        return false;
+
+    if(src.length() < pattern.length())
+        return false;
+
     if(strcmp(src.substr(0, pattern.length()).c_str(), pattern.c_str()) == 0)
         return true;
     else
         return false;
 }
 
-uint32_t contains(std::string src, std::string pattern)
+bool contains(std::string src, std::string pattern, uint32_t *pos)
 {
+    *pos = 0;
+
+    if(src.empty() || pattern.empty())
+        return false;
+
+    uint32_t src_len = src.length();
     uint32_t pattern_len = pattern.length();
 
-    for(uint32_t i = 0; i < src.length() - pattern_len; i++)
+    if(src_len < pattern_len)
+        return false;
+
+    for(uint32_t i = 0; i < src_len - pattern_len; i++)
     {
         if(strcmp(src.substr(i, pattern_len).c_str(), pattern.c_str()) == 0)
         {
-            return i;
+            *pos = i;
+            return true;
         }
     }
 
-    return 0;
+    return false;
 }
 
 std::vector<std::string> split(const std::string &s, char delimiter)
@@ -97,7 +129,7 @@ std::string send_command(std::string command)
 	return result;
 }
 
-void sendit()
+void send_terminal_command()
 {
     fflush(stdin);
 
@@ -110,16 +142,26 @@ void sendit()
     std::cout << send_command(cmd);
 }
 
-void do_command(uint32_t cmd)
+void do_command(char cmd)
 {
     switch(cmd)
     {
-        case 1:
-            print_memory_stats();
+        case '1':
+            std::cout << "--------------------------------------------" << std::endl;
+            print_ram_memory_stats();
+            std::cout << "--------------------------------------------\n" << std::endl;
             break;
-        case 2:
+        case '2':
+            std::cout << "--------------------------------------------" << std::endl;
+            print_hard_disk_memory_stats();
+            std::cout << "--------------------------------------------\n" << std::endl;
             break;
-        case 0:
+        case '3':
+            std::cout << "--------------------------------------------" << std::endl;
+            print_cpu_info();
+            std::cout << "--------------------------------------------\n" << std::endl;
+            break;
+        case '0':
             break;
         default:
             print_menu();
@@ -136,6 +178,8 @@ void print_menu(void)
     std::cout << "--------------------------------------------" << std::endl;
     std::cout << "                        For exit, press 0.  " << std::endl;
     std::cout << "--------------------------------------------" << std::endl;
-    std::cout << "  1. Print memory info                      " << std::endl;
+    std::cout << "  1. Print RAM memory info                  " << std::endl;
+    std::cout << "  2. Print hard disk memory info            " << std::endl;
+    std::cout << "  3. Print CPU info                         " << std::endl;
     std::cout << "--------------------------------------------" << std::endl;
 }

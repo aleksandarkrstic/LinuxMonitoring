@@ -1,23 +1,37 @@
 #include "util.h"
 #include <iostream>
 
+static struct termios old, new_one;
+
+// Initialize new terminal i/o settings:
+void _initTermios(int echo)
+{
+	tcgetattr(0, &old); // grab old terminal i/o settings
+	new_one = old; // make new settings same as old settings
+	new_one.c_lflag &= ~ICANON; // disable buffered i/o
+	new_one.c_lflag &= echo ? ECHO : ~ECHO; // set echo mode
+	tcsetattr(0, TCSANOW, &new_one); // use these new terminal i/o settings now
+}
+
 int main()
 {
     print_menu();
 
-    uint32_t key = 0;
+    char key = 0;
+
+    _initTermios(0);
 
     do
 	{
-        key = 0;
+		while(!_kbhit());
 
-        scanf("%d%*c", &key);
+		key = getchar();
 
-		do_command(key);
-
-		fflush(stdin);
+        do_command(key);
 	}
-	while (key != 0);
+	while(key != '0');
+
+	tcflush(0, TCIFLUSH); // Clear stdin to prevent characters appearing on prompt
 
     return 0;
 }

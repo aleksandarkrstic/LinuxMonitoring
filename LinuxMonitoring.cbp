@@ -32,7 +32,11 @@
 			<Add option="-Wall" />
 			<Add option="-fexceptions" />
 		</Compiler>
+		<Unit filename="cpu.cpp" />
+		<Unit filename="cpu.h" />
 		<Unit filename="main.cpp" />
+		<Unit filename="memory.cpp" />
+		<Unit filename="memory.h" />
 		<Unit filename="util.cpp" />
 		<Unit filename="util.h">
 			<Option target="&lt;{~None~}&gt;" />
