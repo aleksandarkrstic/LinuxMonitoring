@@ -41,3 +41,8 @@ void print_hard_disk_memory_stats(void)
         }
     }
 }
+
+void print_active_processes(void)
+{
+    std::cout << send_command("ps -eo pid,ppid,cmd,%mem,%cpu --sort=-%mem | head");
+}

@@ -19,6 +19,7 @@
 
 #include "memory.h"
 #include "cpu.h"
+#include "network.h"
 
 extern std::string sudo_password;
 

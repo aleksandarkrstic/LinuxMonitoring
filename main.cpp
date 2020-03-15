@@ -4,7 +4,7 @@
 static struct termios old, new_one;
 
 // Initialize new terminal i/o settings:
-void _initTermios(int echo)
+void init_termios(int echo)
 {
 	tcgetattr(0, &old); // grab old terminal i/o settings
 	new_one = old; // make new settings same as old settings
@@ -19,7 +19,7 @@ int main()
 
     char key = 0;
 
-    _initTermios(0);
+    init_termios(0);
 
     do
 	{

@@ -30,11 +30,11 @@
 1583874806 /home/aleksandar/Desktop/PROJEKTI/LinuxMonitoring/memory.h
 	"util.h"
 
-1584193804 source:/home/aleksandar/Desktop/git/LinuxMonitoring/main.cpp
+1584292817 source:/home/aleksandar/Desktop/git/LinuxMonitoring/main.cpp
 	"util.h"
 	<iostream>
 
-1584192546 /home/aleksandar/Desktop/git/LinuxMonitoring/util.h
+1584273716 /home/aleksandar/Desktop/git/LinuxMonitoring/util.h
 	<iostream>
 	<string>
 	<fstream>
@@ -52,14 +52,15 @@
 	<string.h>
 	"memory.h"
 	"cpu.h"
+	"network.h"
 
-1584184207 /home/aleksandar/Desktop/git/LinuxMonitoring/memory.h
+1584292817 /home/aleksandar/Desktop/git/LinuxMonitoring/memory.h
 	"util.h"
 
-1584193804 source:/home/aleksandar/Desktop/git/LinuxMonitoring/util.cpp
+1584292930 source:/home/aleksandar/Desktop/git/LinuxMonitoring/util.cpp
 	"util.h"
 
-1584192700 source:/home/aleksandar/Desktop/git/LinuxMonitoring/memory.cpp
+1584292892 source:/home/aleksandar/Desktop/git/LinuxMonitoring/memory.cpp
 	"memory.h"
 
 1584187458 /home/aleksandar/Desktop/git/LinuxMonitoring/cpu.h
@@ -67,4 +68,10 @@
 
 1584193975 source:/home/aleksandar/Desktop/git/LinuxMonitoring/cpu.cpp
 	"cpu.h"
+
+1584273646 /home/aleksandar/Desktop/git/LinuxMonitoring/network.h
+	"util.h"
+
+1584290429 source:/home/aleksandar/Desktop/git/LinuxMonitoring/network.cpp
+	"network.h"
 

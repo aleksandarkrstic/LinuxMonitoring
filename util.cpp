@@ -161,6 +161,16 @@ void do_command(char cmd)
             print_cpu_info();
             std::cout << "--------------------------------------------\n" << std::endl;
             break;
+        case '4':
+            std::cout << "--------------------------------------------" << std::endl;
+            print_network_info();
+            std::cout << "--------------------------------------------\n" << std::endl;
+            break;
+        case '5':
+            std::cout << "--------------------------------------------" << std::endl;
+            print_active_processes();
+            std::cout << "--------------------------------------------\n" << std::endl;
+            break;
         case '0':
             break;
         default:
@@ -181,5 +191,7 @@ void print_menu(void)
     std::cout << "  1. Print RAM memory info                  " << std::endl;
     std::cout << "  2. Print hard disk memory info            " << std::endl;
     std::cout << "  3. Print CPU info                         " << std::endl;
+    std::cout << "  4. Print Network info                     " << std::endl;
+    std::cout << "  5. Print active proccesses                " << std::endl;
     std::cout << "--------------------------------------------" << std::endl;
 }
